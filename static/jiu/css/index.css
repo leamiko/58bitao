@@ -1212,7 +1212,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99a0a0a0,endCo
 	width:126px;
 	height:34px;
 	margin-left:-4px;
-	color: #3C6209;
+	color: #ff9900;
 	line-height:30px;
 	text-align:center;
 
@@ -1258,7 +1258,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99a0a0a0,endCo
 .jiu-side-nav .bd li a:hover {
     background:#f6ebde;
 }
-.jiu-side-nav .bd li a.out{ color:#38980d;}
+.jiu-side-nav .bd li a.out{ color:#ff9900;}
 .jiu-side-nav .bd li a.out:hover{ text-decoration:underline; background:none;}
 .jiu-side-nav .bd .bd-other{ padding-left:0;}
 .jiu-side-nav .bd .bd-other li{ width:100%; text-align:center;}

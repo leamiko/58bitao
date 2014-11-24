@@ -227,7 +227,7 @@ textarea,input[type="text"]{
 	font-family:Tahoma,Helvetica,Arial,sans-serif;
 }
 /*head*/
-.head{height:137px;width:100%;background:url(../img/global/head-bj02.gif) repeat-x;box-shadow: 0 1px 1px rgba(212, 212, 212, 0.3);}
+.head{height:137px;width:100%;background:url(../img/global/head-bj03.gif) repeat-x;box-shadow: 0 1px 1px rgba(212, 212, 212, 0.3);}
 .head a:hover{text-decoration:none;}
 .head .top{width:980px;height:92px;clear:both;margin:0px auto; position:  relative;}
 .head .logo_show{float:left;padding-left:5px;}
@@ -448,7 +448,7 @@ box-shadow: 0 0 2px rgba(255,255,255,255);
 .nav .split a b{ width:10px; height:14px; display: inline-block;vertical-align: -2px;margin-right: 3px; z-index:999;*vertical-align: 2px; _margin-top:10px;}
 .nav .split a .b_r01{background:url(../img/icon/iphone-ico.gif) no-repeat; _background:url(../img/icon/iphone-ico.gif) no-repeat;}
 .nav .split a .b_r02{ background:url(../img/icon/iphone-ico01.png) no-repeat;}
-.nav .split a i{position:absolute; top:0;background:url(../img/global/nav-line01.gif) no-repeat; height:38px; width:2px;}
+.nav .split a i{position:absolute; top:0; height:38px; width:2px;}
 .nav .split a .b_l{ left:0;}
 .nav .split a .b_r{ right:0;}
 .nav .split a .revision{ background:url(../img/icon/revision.png) no-repeat; height:31px; width:65px; position:absolute; top:-17px; right:-14px; z-index:10;

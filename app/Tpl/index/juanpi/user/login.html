@@ -17,7 +17,7 @@
 	</div>
 	<div class="white_bg wrap">
 		<div class="wrap_left  w_login">
-			<h1>{:L('login_title')}{:C('ftx_site_name')}</h1>
+			<h1>{:L('login_title')}</h1>
 			<form id="J_login_form" action="{:U('user/login')}" method="post">
 				<ul>
 					<li>
@@ -37,6 +37,7 @@
 					<li>
 						<input type="submit" name="imageField" id="submits" value="登　录" class="smt">
 						<input type="hidden" name="action" id="login" value="login" />
+						<input type="hidden" name="ret_url" value="{$ret_url}" />
 						<font class="forget1"> <a href="{:U('forget/index')}">{:L('forget_password')}</a></font>
 					</li>
 				</ul>

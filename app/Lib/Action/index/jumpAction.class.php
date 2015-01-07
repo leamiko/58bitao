@@ -6,8 +6,11 @@ class jumpAction extends FirstendAction {
         parent::_initialize();
         if (!$this->visitor->is_login && !in_array(ACTION_NAME, array('login', 'register', 'binding', 'ajax_check'))) 
         {
-            IS_AJAX && $this->ajaxReturn(0, L('login_please'));
-            $this->redirect('user/login');
+
+            $id = I('id','', 'intval');
+			$iid = I('iid','','trim');
+			$url = U('jump/index',array('id'=>$id,'iid'=>$iid));
+            $this->redirect('user/login',array('ret_url'=>$url));
         }
     }
 

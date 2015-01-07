@@ -36,11 +36,17 @@ class userAction extends UsersAction {
             $synlogin = $passport->synlogin($uid);
             if (IS_AJAX) {
                 $this->ajaxReturn(1, L('login_successe').$synlogin);
-            } else {
-				$this->redirect('index/index');
+            } else {				
                 //跳转到登陆前页面（执行同步操作）
                 $ret_url = $this->_post('ret_url', 'trim');
-                $this->success(L('login_successe').$synlogin, $ret_url);
+                if($ret_url)
+                {
+                    $this->success(L('login_successe').$synlogin, $ret_url);
+                }
+                else
+                {
+                    $this->redirect('index/index');
+                }
             }
         } else {
             /* 同步退出外部系统 */
@@ -53,7 +59,7 @@ class userAction extends UsersAction {
                 $this->ajaxReturn(1, '', $resp);
             } else {
                 //来路
-                $ret_url = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : __APP__;
+                $ret_url = isset($_GET['ret_url'])?trim($_GET['ret_url']):'';
                 $this->assign('ret_url', $ret_url);
                 $this->assign('synlogout', $synlogout);
 				$this->_config_seo(array(

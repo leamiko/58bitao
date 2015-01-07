@@ -117,6 +117,10 @@ class indexAction extends FirstendAction {
 			if(!$val['click_url']){
 				$items[$key]['click_url']	=U('jump/index',array('id'=>$val['id']));
 			}
+			else
+			{
+				$items[$key]['click_url']	=U('item/index',array('id'=>$val['id']));
+			}
 			if($val['coupon_start_time']>time()){
 				$items[$key]['click_url']	=U('item/index',array('id'=>$val['id']));
 				$items[$key]['timeleft'] = $val['coupon_start_time']-time();

@@ -114,15 +114,11 @@ class indexAction extends FirstendAction {
 			$items[$key]['class']	= $this->_mod->status($val['status'],$val['coupon_start_time'],$val['coupon_end_time']);
 			$items[$key]['zk']		= round(($val['coupon_price']/$val['price'])*10, 1); 
 			$items[$key]['newhot'] = round(date('Ymd')-date("Ymd", $val['coupon_start_time']));
-			if(!$val['click_url']){
-				$items[$key]['click_url']	=U('jump/index',array('id'=>$val['id']));
-			}
-			else
-			{
-				$items[$key]['click_url']	=U('item/index',array('id'=>$val['id']));
-			}
-			if($val['coupon_start_time']>time()){
-				$items[$key]['click_url']	=U('item/index',array('id'=>$val['id']));
+
+			$items[$key]['click_url']	=U('item/index',array('id'=>$val['id']));
+		
+			if($val['coupon_start_time']>time())
+			{				
 				$items[$key]['timeleft'] = $val['coupon_start_time']-time();
 			}else{
 				$items[$key]['timeleft'] = $val['coupon_end_time']-time();
@@ -132,7 +128,7 @@ class indexAction extends FirstendAction {
             $items[$key]['cname'] = D('items_cate')->where(array('id'=>$val['cate_id']))->getField('name');	
         }
 			$items[$key]['cate_name']		=$cate_list['p'][$val['cate_id']]['name']; 
-			$url = C('ftx_site_url').U('jump/index',array('id'=>$val['id']));
+			$url = C('ftx_site_url').U('item/index',array('id'=>$val['id']));
 			$items[$key]['url'] = urlencode($url);
 			$items[$key]['urltitle'] = urlencode($val['title']);
 			$items[$key]['price'] = number_format($val['price'],1);
@@ -230,21 +226,20 @@ class indexAction extends FirstendAction {
 			$items[$key]['class']	= $this->_mod->status($val['status'],$val['coupon_start_time'],$val['coupon_end_time']);
 			$items[$key]['zk']		= round(($val['coupon_price']/$val['price'])*10, 1); 
 			$items[$key]['newhot'] = round(date('Ymd')-date("Ymd", $val['coupon_start_time']));
-			if(!$val['click_url']){
-				$items[$key]['click_url']	=U('jump/index',array('id'=>$val['id']));
-			}
+			$items[$key]['click_url']	=U('item/index',array('id'=>$val['id']));
 			if($val['coupon_start_time']>time()){
-				$items[$key]['click_url']	=U('item/index',array('id'=>$val['id']));
+				
 				$items[$key]['timeleft'] = $val['coupon_start_time']-time();
 			}else{
 				$items[$key]['timeleft'] = $val['coupon_end_time']-time();
 			}
 			$items[$key]['ccid'] = $val['cate_id'];			
-			if(isset($val['cate_id'])){
-            $items[$key]['cname'] = D('items_cate')->where(array('id'=>$val['cate_id']))->getField('name');	
-        }
+			if(isset($val['cate_id']))
+			{
+            	$items[$key]['cname'] = D('items_cate')->where(array('id'=>$val['cate_id']))->getField('name');	
+        	}
 			$items[$key]['cate_name']		=$cate_list['p'][$val['cate_id']]['name'];
-			$url = C('ftx_site_url').U('jump/index',array('id'=>$val['id']));
+			$url = C('ftx_site_url').U('item/index',array('id'=>$val['id']));
 			$items[$key]['url'] = urlencode($url);
 			$items[$key]['urltitle'] = urlencode($val['title']);
 			$items[$key]['price'] = number_format($val['price'],1);
@@ -380,11 +375,9 @@ class indexAction extends FirstendAction {
 			$items[$key]['class']	= $this->_mod->status($val['status'],$val['coupon_start_time'],$val['coupon_end_time']);
 			$items[$key]['zk']		= round(($val['coupon_price']/$val['price'])*10, 1); 
 			$items[$key]['newhot'] = round(date('Ymd')-date("Ymd", $val['coupon_start_time']));
-			if(!$val['click_url']){
-				$items[$key]['click_url']	=U('jump/index',array('id'=>$val['id']));
-			}
-			if($val['coupon_start_time']>time()){
-				$items[$key]['click_url']	=U('item/index',array('id'=>$val['id']));
+			$items[$key]['click_url']	=U('item/index',array('id'=>$val['id']));
+			
+			if($val['coupon_start_time']>time()){				
 				$items[$key]['timeleft'] = $val['coupon_start_time']-time();
 			}else{
 				$items[$key]['timeleft'] = $val['coupon_end_time']-time();

@@ -48,8 +48,8 @@
 $(function(){
 	$.formValidator.initConfig({formid:"info_form",autotip:true});
 	$("#J_name").formValidator({ onshow:lang.please_input+lang.item_site_name, onfocus:lang.please_input+lang.item_site_name, oncorrect:lang.input_right}).inputValidator({ min:1, onerror:lang.please_input+lang.item_site_name});
-    $("#J_domain").formValidator({ onshow:lang.please_input+lang.item_site_domain, onfocus:lang.please_input+lang.item_site_domain, oncorrect:lang.input_right}).inputValidator({ min:1, onerror:lang.please_input+lang.item_site_domain});
-    $("#J_url").formValidator({ onshow:lang.please_input+lang.item_site_url, onfocus:lang.please_input+lang.item_site_url, oncorrect:lang.input_right}).inputValidator({ min:1, onerror:lang.please_input+lang.item_site_url});
+    // $("#J_domain").formValidator({ onshow:lang.please_input+lang.item_site_domain, onfocus:lang.please_input+lang.item_site_domain, oncorrect:lang.input_right}).inputValidator({ min:1, onerror:lang.please_input+lang.item_site_domain});
+    // $("#J_url").formValidator({ onshow:lang.please_input+lang.item_site_url, onfocus:lang.please_input+lang.item_site_url, oncorrect:lang.input_right}).inputValidator({ min:1, onerror:lang.please_input+lang.item_site_url});
 		
 	$('#info_form').ajaxForm({success:complate,dataType:'json'});
 	function complate(result){

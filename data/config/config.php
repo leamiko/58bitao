@@ -1,6 +1,7 @@
 <?php
 return array(
-    'APP_GROUP_LIST'		=> 'index,admin,m', //分组
+'ONLINE_CHECK'=>false,   
+ 'APP_GROUP_LIST'		=> 'index,admin,m', //分组
     'DEFAULT_GROUP'			=> 'index', //默认分组
     'DEFAULT_MODULE'		=> 'index', //默认控制器
 	'TMPL_TEMPLATE_SUFFIX' => '.html',
